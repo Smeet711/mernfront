@@ -28,7 +28,7 @@ function createBook() {
     formData.append("price", price);
 
     try {
-      const response = await fetch("https://mernback-x5e0.onrender.com/api/books", {
+      const response = await fetch("http://localhost:8000/api/books", {
         method: "POST",
         body: formData,
       });

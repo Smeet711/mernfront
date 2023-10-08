@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function editBook() {
   const navigate = useNavigate();
   const urlSlug = useParams();
-  const baseUrl = `https://mernback-x5e0.onrender.com/api/books/${urlSlug.slug}`;
+  const baseUrl = `http://localhost:8000/api/books/${urlSlug.slug}`;
 
   const [bookId, setBookId] = useState("");
   const [title, setTitle] = useState("");
@@ -62,7 +62,7 @@ function editBook() {
     }
 
     try {
-      const response = await fetch("https://mernback-x5e0.onrender.com/api/books", {
+      const response = await fetch("http://localhost:8000/api/books", {
         method: "PUT",
         body: formData,
       });
@@ -99,7 +99,7 @@ function editBook() {
 
     try {
       const response = await fetch(
-        "https://mernback-x5e0.onrender.com/books/" + bookId,
+        "http://localhost:8000/api/books/" + bookId,
         {
           method: "DELETE",
         }
@@ -140,7 +140,7 @@ function editBook() {
               <img src={`${image}`} alt="preview image" />
             ) : (
               <img
-                src={`https://mernback-x5e0.onrender.com/uploads/${thumbnail}`}
+                src={`http://localhost:8000/uploads/${thumbnail}`}
                 alt="preview image"
               />
             )}

@@ -9,7 +9,7 @@ function singleBook() {
   const [bookId, setBookId] = useState("");
 
   const urlSlug = useParams();
-  const baseUrl = `https://mernback-x5e0.onrender.com/api/books/${urlSlug.slug}`;
+  const baseUrl = `http://localhost:8000/api/books/${urlSlug.slug}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +46,7 @@ function singleBook() {
       <div className="bookdetails">
         <div className="col-1">
           <img
-            src={`https://mernback-x5e0.onrender.com/uploads/${data?.thumbnail}`}
+            src={`http://localhost:8000/uploads/${data?.thumbnail}`}
             alt={data?.title}
           />
           <Link to={`/editbook/${data.slug}`}>Edit</Link>
